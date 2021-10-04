@@ -48,6 +48,7 @@ const userSchema = new mongoose.Schema(
 );
 
 userSchema.virtual("password").set(function (password) {
+  console.log("password", password);
   this.hash_password = bcrypt.hashSync(password, 10);
 });
 
